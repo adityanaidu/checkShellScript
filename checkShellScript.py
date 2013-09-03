@@ -5,6 +5,7 @@
 
 import re
 import sys
+import os.path
 
 ## Add elements to checkList2 for additional checks
 checkList2 = []
@@ -36,9 +37,18 @@ checkList2.append((reexpDone, " Missing a ; before done\n"))
 reexpVA = re.compile("(\s+=|=\s+)")
 checkList2.append((reexpVA, "Space in variable assignments\n"))
 
+def usage():
+    print "Usage: %s <space separated script files list>" % sys.argv[0]
+    print "Eg. %s script1 script2 script3" % sys.argv[0]
+    sys.exit(1)
+
 def parseFiles(files):
 
     for fl in files:
+
+        if os.path.isfile(fl) == False:
+            print "File %s doesn't exists" % fl
+            continue
      
         lNum = 0
         with open(fl, "r") as f:
@@ -48,6 +58,7 @@ def parseFiles(files):
              and '#!/usr/bin/env bash' not in content[0] \
              and '#!/bin/sh' not in content[0] \
              and '#!/usr/bin/env sh' not in content[0]:
+            print "Is %s a script file?" % fl   
             continue
      
         for ln in content:
@@ -60,5 +71,8 @@ def parseFiles(files):
 
  
 if __name__ == "__main__":
+    if len(sys.argv) == 1 or sys.argv[1] == "-h":
+        usage()
+
     parseFiles(sys.argv[1:])    
 
