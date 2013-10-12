@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+a == b
+b
+do
+asdf ; done
+    done
+    do
+was} done
+add do
+$@
+ccd 2>&1 > aFile
+$var=1
+ [ "$var" = 1 && "$var2" =2  ] 
+ "~/what"
+ echo $(whoami) 
+
+ping 10.8.8.8 | while read p ; do write p ; done

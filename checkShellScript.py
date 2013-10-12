@@ -34,7 +34,7 @@ checkList2.append((reexpDo, " Missing a ; before do?\n"))
 reexpDone = re.compile("[a-zA-Z0-9\}]+\s+done")
 checkList2.append((reexpDone, " Missing a ; before done\n"))
 
-reexpVA = re.compile("(\s+=|=\s+)")
+reexpVA = re.compile("(\s+=[^=]|=[^=]\s+)")
 checkList2.append((reexpVA, "Space in variable assignments\n"))
 
 def usage():
@@ -63,11 +63,12 @@ def parseFiles(files):
      
         for ln in content:
             lNum+=1
-        
+            subLn = ln.split('|')  
             for aTuple in checkList2:
-                if aTuple[0].search(ln):
-                    print fl, lNum, ln,
-                    print aTuple[1]
+                for asubLn in subLn:
+                    if aTuple[0].search(asubLn):
+                        print fl, lNum, asubLn,
+                        print aTuple[1]
 
  
 if __name__ == "__main__":
