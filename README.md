@@ -1,4 +1,4 @@
 checkShellScript
 ================
 
-Static Code Analysis for Shell Scripts
+Static Code Analysis of bash scripts
