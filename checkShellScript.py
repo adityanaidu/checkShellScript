@@ -54,12 +54,9 @@ def parseFiles(files):
         with open(fl, "r") as f:
             content = f.readlines()
         
-        if '#!/bin/bash' not in content[0] \
-             and '#!/usr/bin/env bash' not in content[0] \
-             and '#!/bin/sh' not in content[0] \
-             and '#!/usr/bin/env sh' not in content[0]:
-            print "Is %s a script file?" % fl   
-            continue
+        if 'bash' not in content[0] \
+             or content[0].startswith('#!') == False:
+            print "%s is missing a proper #! line\n" % fl   
      
         for ln in content:
             lNum+=1
