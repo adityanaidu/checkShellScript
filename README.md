@@ -12,6 +12,7 @@ For Usage type
 ```
 
 Unit Testing
+
 To test the code itself run checkShellScript on test.lines
 and compare the output with the expected.results file:
 
