@@ -7,7 +7,12 @@ asdf ; done
     do
 was} done
 add do
-$@
+ $@ 
+ "$@"
+ $@"
+ "$*"
+ $*
+ "$* 
 ccd 2>&1 > aFile
 $var=1
  [ "$var" = 1 && "$var2" =2  ] 

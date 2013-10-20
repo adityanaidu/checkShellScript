@@ -1,0 +1,39 @@
+test.lines:8 was} done
+ Missing a ; before done
+
+test.lines:9 add do
+ Missing a ; before do
+
+test.lines:10  $@ 
+ Need to double quote $@
+
+test.lines:12  $@"
+ Need to double quote $@
+
+test.lines:14  $*
+ Need to double quote $*
+
+test.lines:15  "$* 
+ Need to double quote $*
+
+test.lines:16 ccd 2>&1 > aFile
+ > should be before 2>&1 like "> logFile 2>&1"
+
+test.lines:17 $var=1
+ $<var> being assigned a value. Remove $
+
+test.lines:17 $var=1
+ Space in variable assignments
+
+test.lines:18  [ "$var" = 1 && "$var2" =2  ] 
+ && in [ ] not allowed
+
+test.lines:18  [ "$var" = 1 && "$var2" =2  ] 
+ Space in variable assignments
+
+test.lines:19  "~/what"
+ Remove double quotes around Tilde
+
+test.lines:20  echo $(whoami) 
+ echo not required
+
