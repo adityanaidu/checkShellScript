@@ -11,6 +11,14 @@ For Usage type
 ./checkShellScript.py -h
 ```
 
+Before you use checkShellScript, use the -n and -u option on your script to 
+take care of basic syntax issues
+
+```
+bash -n scriptname
+bash -u scriptname
+```
+
 Unit Testing
 
 To test the code itself run checkShellScript on test.lines
